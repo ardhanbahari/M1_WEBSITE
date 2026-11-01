@@ -1,0 +1,107 @@
+/* Angkasa Raya Steel - custom overrides */
+.hero { padding-top: 140px; min-height: 100vh; }
+.hero .hero-product { border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,.35); max-height: 420px; object-fit: cover; width: 100%; }
+.badge-iso { height: 64px; background:#fff; border-radius:8px; padding:4px; }
+.product-card { background: var(--surface-color); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,.08); height: 100%; transition: .3s; }
+.product-card:hover { transform: translateY(-6px); }
+.product-card img { width: 100%; height: 280px; object-fit: cover; background:#e9edf3; }
+.product-card .body { padding: 24px; }
+.product-card h3 { font-size: 24px; margin-bottom: 4px; }
+.product-card .sub { color: var(--accent-color); font-weight: 600; margin-bottom: 12px; display:block; }
+.product-card ul { list-style: none; padding: 0; margin: 0; }
+.product-card li { padding: 4px 0; display:flex; gap:8px; }
+.product-card li i { color: var(--accent-color); }
+.vm-box { background: var(--surface-color); border-left: 4px solid var(--accent-color); padding: 20px 24px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,.06); height: 100%; }
+.vm-box h4 { margin-bottom: 8px; }
+.qc-img { height: 200px; object-fit: cover; width: 100%; background:#e9edf3; }
+.wa-float { position: fixed; left: 15px; bottom: 15px; z-index: 9998; background:#25d366; color:#fff; width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; box-shadow:0 4px 14px rgba(0,0,0,.3); }
+.wa-float:hover { color:#fff; background:#1ebe5b; }
+.map-wrap iframe { width:100%; height:100%; min-height:380px; border:0; border-radius:12px; }
+
+/* language switch */
+.lang-switch { display:flex; align-items:center; gap:6px; color:#fff; font-family:var(--nav-font); font-size:14px; }
+.lang-switch button { background:none; border:0; color:#fff; opacity:.7; padding:2px 4px; font-weight:500; }
+.lang-switch button.active { opacity:1; color:var(--accent-color); font-weight:700; }
+.lang-switch button:hover { opacity:1; }
+/* quote button */
+.btn-quote { display:inline-flex; align-items:center; gap:8px; margin-top:16px; background:var(--accent-color); color:#fff; padding:10px 22px; border-radius:50px; font-weight:500; }
+.btn-quote:hover { background:#8b0a14; color:#fff; }
+/* gallery */
+.gallery-item { position:relative; display:block; overflow:hidden; border-radius:12px; aspect-ratio:4/3; background:#e9edf3; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; transition:.4s; }
+.gallery-item:hover img { transform:scale(1.06); }
+.gallery-item span { position:absolute; left:0; right:0; bottom:0; padding:10px 14px; color:#fff; font-size:14px; background:linear-gradient(transparent,rgba(0,0,0,.7)); }
+/* organization chart */
+.org-tree, .org-tree ul { list-style:none; margin:0; padding:0; }
+.org-tree > li { text-align:center; }
+.org-tree ul { display:flex; justify-content:center; padding-top:28px; position:relative; }
+.org-tree ul::before { content:''; position:absolute; top:0; left:50%; height:28px; border-left:2px solid var(--accent-color); }
+.org-tree ul li { position:relative; padding:28px 8px 0; text-align:center; flex:1 1 0; max-width:230px; }
+.org-tree ul li::before, .org-tree ul li::after { content:''; position:absolute; top:0; right:50%; width:50%; height:28px; border-top:2px solid var(--accent-color); }
+.org-tree ul li::after { right:auto; left:50%; border-left:2px solid var(--accent-color); }
+.org-tree ul li:first-child::before, .org-tree ul li:last-child::after { border:0 none; }
+.org-tree ul li:last-child::before { border-right:2px solid var(--accent-color); border-radius:0 8px 0 0; }
+.org-tree ul li:first-child::after { border-radius:8px 0 0 0; }
+.org-tree ul li:only-child::before { display:none; }
+.org-node { background:var(--surface-color); border-radius:12px; padding:18px 14px; height:100%; box-shadow:0 5px 25px rgba(0,0,0,.08); border-top:4px solid var(--accent-color); transition:.3s; }
+.org-node:hover { transform:translateY(-4px); }
+.org-node i { font-size:30px; color:var(--accent-color); display:block; margin-bottom:6px; }
+.org-node h4 { font-size:16px; font-weight:600; margin:0 0 4px; }
+.org-node p { font-size:13px; margin:0; opacity:.8; }
+.org-node .org-name { display:block; font-size:14px; font-weight:500; margin-bottom:2px; }
+.org-node.org-top { display:inline-block; min-width:240px; background:linear-gradient(135deg,#14080a,#6e0a14); border-top-color:#c9a24b; }
+.org-node.org-top h4, .org-node.org-top p { color:#fff; }
+@media (max-width: 991px) {
+  .org-tree ul { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding-top:28px; }
+  .org-tree ul li { max-width:none; padding:0; }
+  .org-tree ul li::before, .org-tree ul li::after { display:none; }
+}
+@media (max-width: 575px) {
+  .org-tree ul { grid-template-columns:1fr; }
+  .org-node.org-top { min-width:0; display:block; }
+}
+/* ===== Tema merah eksklusif (crimson + hitam + emas) ===== */
+:root {
+  --heading-color: #2a0d12;
+  --default-color: #4a3b3d;
+  --accent-color: #c1121f;
+  --nav-hover-color: #e63946;
+  --nav-dropdown-hover-color: #c1121f;
+}
+.light-background { --background-color: #faf5f5; }
+.dark-background { --background-color: #14080a; --surface-color: #241014; }
+
+/* header */
+.header { --background-color: #14080a; }
+.index-page.scrolled .header { --background-color: rgba(20,8,10,.94); border-bottom: 1px solid rgba(201,162,75,.35); box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+.header .logo img.logo-img { max-height: 46px; width: auto; margin-right: 10px; }
+.header .logo:not(.logo-fail) .sitename { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.lang-switch button.active { color: #ff5a67; }
+
+/* tombol */
+.header .btn-getstarted, .header .btn-getstarted:focus, .hero .btn-get-started, .btn-quote {
+  background: linear-gradient(135deg,#d11f2e,#8b0a14); border-color: #8b0a14; box-shadow: 0 6px 18px rgba(193,18,31,.35);
+}
+.header .btn-getstarted:hover, .header .btn-getstarted:focus:hover, .hero .btn-get-started:hover, .btn-quote:hover {
+  background: linear-gradient(135deg,#e63946,#a30f22); color:#fff;
+}
+
+/* judul section: garis emas */
+.section-title h2 { letter-spacing: 2px; }
+.section-title h2::before { background: rgba(201,162,75,.5); }
+.section-title h2::after { width: 70px; background: linear-gradient(90deg,#8e6b1f,#e2c277,#8e6b1f); }
+
+/* kartu */
+.product-card, .vm-box { border-top: 3px solid var(--accent-color); }
+.product-card:hover { box-shadow: 0 14px 40px rgba(139,10,20,.25); }
+.vm-box { border-left-color: var(--accent-color); }
+.org-node { border-top-color: var(--accent-color); }
+.org-node:hover { box-shadow: 0 14px 34px rgba(139,10,20,.25); }
+.org-tree ul::before, .org-tree ul li::before, .org-tree ul li::after { border-color: rgba(193,18,31,.7); }
+
+/* footer gelap */
+.footer { --background-color: #14080a; --default-color: #cdbfc1; --heading-color: #ffffff; border-top: 3px solid #8b0a14; }
+.footer .footer-logo { max-height: 56px; width: auto; display: block; margin-bottom: 14px; }
+.footer .footer-links ul a:hover, .footer .credits a { color: #ff6b75; }
+.footer .copyright { border-top-color: rgba(201,162,75,.3); }
+[hidden]{display:none !important}
